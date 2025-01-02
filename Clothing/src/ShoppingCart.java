@@ -24,6 +24,9 @@ import java.util.List;
             return items;
         }
 
+        public void updatePrice(double price){
+            
+        }
         public void displayCart() {
             System.out.println("Shopping Cart:");
             double total = 0;

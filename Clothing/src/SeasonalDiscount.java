@@ -6,6 +6,5 @@ public class SeasonalDiscount extends Discount {
     @Override
     public void displayDiscountDetails() {
         System.out.println("Seasonal Discount: " + discountPercentage + "% off");
-
     }
 }

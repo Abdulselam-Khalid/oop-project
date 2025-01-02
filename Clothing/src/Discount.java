@@ -1,4 +1,4 @@
-  public abstract class Discount {
+public abstract class Discount {
     protected double discountPercentage;
 
     public Discount(double discountPercentage) {
@@ -11,4 +11,3 @@
 
     public abstract void displayDiscountDetails();
 }
-

@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -12,7 +10,6 @@ public class Main {
 
 // Add products to the product manager
 
-        Inventory inventory = new Inventory(productManager);
         CartManager cartManager = new CartManager();
         OrderManager orderManager = new OrderManager();
         DiscountManager discountManager = new DiscountManager();
@@ -174,28 +171,18 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.println("Applying discount...");
-                    System.out.print("Enter discount code: ");
-                    String discountCode = scanner.nextLine();
-                    System.out.print("Enter product name: ");
-                    String productName = scanner.nextLine();
-
-                    Product product = productManager.searchProductByName(productName);
-                    if (product != null) {
-                        if (discountManager.applyDiscount(discountCode, product)) {
-                            System.out.println("Discount applied successfully!");
-                            System.out.println("New price for " + product.getName() + ": " + product.getPrice());
-                        } else {
-                            System.out.println("Invalid discount code or discount could not be applied.");
-                        }
-                    } else {
-                        System.out.println("Product not found.");
-                    }
+                    System.out.print("Enter Coupon Code: ");
+                    String code = scanner.nextLine();
+                    Coupon coupon = new Coupon(code, 10);
+                    double discountedPrice = coupon.applyCoupon(cartManager.getTotalPrice());
+                    System.out.println("Discounted Price: " + discountedPrice);
+                    
                     break;
 
                 case 6:
-                    System.out.println("Placing order...");
-                    // Add functionality to place order
+                    Payment.validateCard(scanner);
+                    System.out.println("Your order is on the way");
+                    
                     break;
                 case 7:
                     System.out.println("Logging out...");

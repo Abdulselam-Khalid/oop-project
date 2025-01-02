@@ -1,20 +1,15 @@
-  public interface Payment {
-    boolean processPayment(double amount);
-}
-
-    class CreditCardPayment implements Payment {
-        @Override
-        public boolean processPayment(double amount) {
-            // Process credit card payment
-            return true;  // Simulate payment success
-        }
+import java.util.Scanner;
+  public class Payment {
+    
+    public static void validateCard(Scanner scanner){
+        System.out.print("Enter card Number: ");
+        String cardNumber = scanner.nextLine();
+        System.out.println("Payment Successful");
     }
 
-    class PaparaPayment implements Payment {
-        @Override
-        public boolean processPayment(double amount) {
-            // Process Papara payment
-            return true;  // Simulate payment success
+
 }
-    }
+
+
+    
 

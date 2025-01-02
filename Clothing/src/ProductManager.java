@@ -17,7 +17,9 @@ public class ProductManager {
         addProduct(product4);
         addProduct(product5);
     }
-
+    public void discount(double discount){
+        
+    }
     public void addProduct(Product product) {
         productList.add(product);
     }
@@ -34,7 +36,6 @@ public class ProductManager {
         }
         return null; // Not found
     }
-
     public List<Product> getAllProducts() {
         return productList;
 }

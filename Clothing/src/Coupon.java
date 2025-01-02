@@ -1,18 +1,19 @@
-import java.util.Date;
 
 public class Coupon {
     private String code;
-    private Date expirationDate;
     private double discountValue;
 
-    public Coupon(String code, Date expirationDate, double discountValue) {
+    public Coupon(String code, double discountValue) {
         this.code = code;
-        this.expirationDate = expirationDate;
         this.discountValue = discountValue;
     }
 
     public boolean isValid() {
-        return expirationDate.after(new Date());
+        if(code.equals("A10")){
+            return true;
+        }
+        else
+        return false;
     }
 
     public double applyCoupon(double totalAmount) {

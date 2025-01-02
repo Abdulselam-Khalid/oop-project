@@ -9,6 +9,5 @@ public class BulkDiscount extends Discount {
     @Override
     public void displayDiscountDetails() {
         System.out.println("Bulk Discount: " + discountPercentage + "% off when buying " + minQuantity + " or more.");
+    }
 }
-}
-
